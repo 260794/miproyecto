@@ -12,6 +12,7 @@ from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
 from kivy.properties import ObjectProperty
 from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.popup import Popup
 Config.set('graphics','width',480)
 Config.set('graphics','heigth',800)
 
@@ -23,59 +24,19 @@ class caja_1 (BoxLayout):
 
 
             self.orientation='vertical'
-            caja2=box2()
             caja1= box1()
+            caja2=box2()
+            caja3=box3()
 
-            self.add_widget(caja2,0)
-            self.add_widget(caja1,1)
+            self.add_widget(caja1)
+            self.add_widget(caja2)
+            self.add_widget(caja3)
+
+
 
 class box2(BoxLayout):
+#
     pass
-
-    # def on_touch_down(self, touch):
-    #     # El toque ha ocurrido dentro del área de widgets. ¡Hacer cosas!
-    #     if self.collide_point(*touch.pos):
-    #             self.btn.opacity = 0.5
-    #
-    # def on_touch_up(self, touch):
-    #     #para que le evento touch no afecte a los otros  witches
-    #     # El toque ha ocurrido dentro del área de widgets. ¡Hacer cosas!
-    #     if self.collide_point(*touch.pos):
-    #             self.btn.text = 'maik'
-    #             self.btn.opacity = 1
-
-class box1(BoxLayout):
-
-    def on_touch_up(self, touch):
-        pass
-
-
-
-    def  boton(self):
-        try:
-
-            if self.label2.text == 'hp':
-                dato = float(self.texto.text)
-                c = dato / 745.7
-                self.etiqueta.text = str("{0:.2f}".format(c))
-                self.texto.text = 'input_num'
-            else:
-                dato = float(self.texto.text)
-                c = dato * 745.7
-                self.etiqueta.text = str("{0:.2f}".format(c))
-                self.texto.text = 'input_num'
-
-
-
-        except:
-            self.etiqueta.text = 'Error'
-
-    def exchange_text(self):
-        texto1= self.label1.text
-        texto2 = self.label2.text
-        self.label1.text = texto2
-        self.label2.text = texto1
-
 
 
 
@@ -88,7 +49,16 @@ class box1(BoxLayout):
     #     # El toque ha ocurrido dentro del área de widgets. ¡Hacer cosas!
     #     if self.collide_point(*touch.pos):
     #              self.texto.text= ''
-
+#
+# class box3(BoxLayout):
+#     pass
+#
+# class p(Popup):
+#     def cambiartext (self):
+#
+#        box=box2()
+#
+#        box.label1.text=self.psi.text
 
 
 
