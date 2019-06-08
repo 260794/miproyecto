@@ -1,0 +1,129 @@
+
+<caja_1>
+
+
+
+    canvas.before:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'Captura.png'
+    BoxLayout:
+        size_hint: 1, .1
+        Label:
+            canvas.before:
+                Color:
+                    rgba:  0, 0, 0, .45
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            text: 'Power'
+            font_size:19
+            font_name:'GearsOfPeace'
+            color:0,.8627,.9098039,1
+
+
+
+
+<box1>:
+
+    padding:10
+    etiqueta:etiqueta
+    texto:texto
+    label1:label1
+    label2:label2
+
+
+    orientation: 'horizontal'
+    size_hint: 1, .1
+    BoxLayout:
+        orientation: 'horizontal'
+        Button:
+            on_press:root.exchange_text()
+            size_hint: .3, 1
+            background_normal:'1.png'
+            background_down:'1.png'
+
+
+
+        Label:
+            id:label1
+            size_hint: .6, 1
+            canvas.before:
+                Color:
+                    rgba:  0, 0, 0, .45
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            text: 'watt'
+            font_size:19
+            font_name:'GearsOfPeace'
+            color:0,.8627,.9098039,1
+        TextInput:
+            name: 'box1'
+            cursor_color:0,.8627,.9098039,.9
+            text: 'input_num'
+            on_touch_up: if self.collide_point( 125.00 ,527.0):  texto.text=''
+
+            multiline: 'Falce'
+            id: texto
+            font_size: 12
+            font_name:'GearsOfPeace'
+            foreground_color:0,.8627,.9098039,1
+            background_color:0,0,0,.45
+
+
+
+        Button:
+            font_size: 12
+            text:'Convert_to'
+            font_name:'GearsOfPeace'
+            on_press:root.boton()
+            background_color:0,0,0,.45
+
+
+        Label:
+            size_hint: .6, 1
+            canvas.before:
+                Color:
+                    rgba:  0, 0, 0, .45
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            id:label2
+            text:'hp'
+            font_name:'GearsOfPeace'
+            color:0,.8627,.9098039,1
+
+
+            font_size: 19
+
+
+
+        Label:
+            canvas.before:
+                Color:
+                    rgba: 0 , 0, 0, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            id: etiqueta
+
+            font_name:'GearsOfPeace'
+            color:1,1,1,.8
+            font_size: 12
+
+
+
+
+
+
+
+
+<box2>:
+
+    # padding:10
+    # btn:btn
+    # Button:
+    #     id: btn
+    #     border: 15,15,15,15
